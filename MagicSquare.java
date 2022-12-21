@@ -53,7 +53,7 @@ public class MagicSquare {
     	
     	
     }
-    if (size == 0 || size == -1) {
+    else if (size == 0 || size == -1) {
       System.out.println("Program ukončen.");
       break;
       
@@ -90,6 +90,16 @@ public class MagicSquare {
     }
 
     int size = matrix.length;
+    
+    //matice nesmí obsahovat záporné prvky
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+          if (matrix[i][j] < 0) {
+            return false;
+          }
+        }
+      }
+
 
   // Zkontroluj jestli součet prvků v každém řádku, sloupci a diagonále je stejný
   int sum = 0;
@@ -134,4 +144,5 @@ public class MagicSquare {
 }
   
 }
+
 
